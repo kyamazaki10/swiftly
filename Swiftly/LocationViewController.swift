@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LocationViewController.swift
 //  Swiftly
 //
 //  Created by Kumiko Yamazaki on 3/12/18.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: Properties
-    @IBOutlet weak var locationLabel: UILabel!
+
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
 
     //MARK: UITextFieldDelegate
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
@@ -36,10 +37,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        locationLabel.text = textField.text
+
     }
 
     //MARK: UIImagePickerControllerDelegate
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
         dismiss(animated: true, completion: nil)
@@ -59,6 +61,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
 
     //MARK: Actions
+
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard in case the user tapped the image while typing in the text field.
         locationTextField.resignFirstResponder()

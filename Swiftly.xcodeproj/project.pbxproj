@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		656449C12057605D00A17E4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656449C02057605D00A17E4F /* AppDelegate.swift */; };
-		656449C32057605D00A17E4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656449C22057605D00A17E4F /* ViewController.swift */; };
+		656449C32057605D00A17E4F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656449C22057605D00A17E4F /* LocationViewController.swift */; };
 		656449C62057605D00A17E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656449C42057605D00A17E4F /* Main.storyboard */; };
 		656449C82057605D00A17E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656449C72057605D00A17E4F /* Assets.xcassets */; };
 		656449CB2057605D00A17E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656449C92057605D00A17E4F /* LaunchScreen.storyboard */; };
 		656449D62057605D00A17E4F /* SwiftlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656449D52057605D00A17E4F /* SwiftlyTests.swift */; };
 		6E8567A0209B93E5003D03B8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85679F209B93E5003D03B8 /* RatingControl.swift */; };
 		6E8567A2209BBB9F003D03B8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8567A1209BBB9F003D03B8 /* Location.swift */; };
+		6E8567A4209CA119003D03B8 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8567A3209CA119003D03B8 /* LocationTableViewCell.swift */; };
+		6E8567A6209CC84C003D03B8 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8567A5209CC84C003D03B8 /* LocationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,7 @@
 /* Begin PBXFileReference section */
 		656449BD2057605D00A17E4F /* Swiftly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656449C02057605D00A17E4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		656449C22057605D00A17E4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		656449C22057605D00A17E4F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		656449C52057605D00A17E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		656449C72057605D00A17E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		656449CA2057605D00A17E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		656449D72057605D00A17E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E85679F209B93E5003D03B8 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		6E8567A1209BBB9F003D03B8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6E8567A3209CA119003D03B8 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		6E8567A5209CC84C003D03B8 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +86,11 @@
 			isa = PBXGroup;
 			children = (
 				656449C02057605D00A17E4F /* AppDelegate.swift */,
-				656449C22057605D00A17E4F /* ViewController.swift */,
+				656449C22057605D00A17E4F /* LocationViewController.swift */,
 				6E8567A1209BBB9F003D03B8 /* Location.swift */,
 				6E85679F209B93E5003D03B8 /* RatingControl.swift */,
+				6E8567A5209CC84C003D03B8 /* LocationTableViewController.swift */,
+				6E8567A3209CA119003D03B8 /* LocationTableViewCell.swift */,
 				656449C42057605D00A17E4F /* Main.storyboard */,
 				656449C72057605D00A17E4F /* Assets.xcassets */,
 				656449C92057605D00A17E4F /* LaunchScreen.storyboard */,
@@ -204,7 +210,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656449C32057605D00A17E4F /* ViewController.swift in Sources */,
+				656449C32057605D00A17E4F /* LocationViewController.swift in Sources */,
+				6E8567A4209CA119003D03B8 /* LocationTableViewCell.swift in Sources */,
+				6E8567A6209CC84C003D03B8 /* LocationTableViewController.swift in Sources */,
 				6E8567A0209B93E5003D03B8 /* RatingControl.swift in Sources */,
 				6E8567A2209BBB9F003D03B8 /* Location.swift in Sources */,
 				656449C12057605D00A17E4F /* AppDelegate.swift in Sources */,

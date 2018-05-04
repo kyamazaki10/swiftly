@@ -10,11 +10,13 @@ import UIKit
 class Location {
 
     //MARK: Properties
+
     var name: String
     var rating: Int
     var photo: UIImage?
 
     //MARK: Initialization
+
     init?(name: String, rating: Int, photo: UIImage?) {
         // The name must not be empty.
         guard !name.isEmpty else {
