@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jjK-Kg-IcS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3PO-Gk-vyz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Location Table View Controller-->
+        <!--Your Locations-->
         <scene sceneID="c2P-wN-SF6">
             <objects>
                 <tableViewController id="jjK-Kg-IcS" customClass="LocationTableViewController" customModule="Swiftly" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,12 +56,19 @@
                             <outlet property="delegate" destination="jjK-Kg-IcS" id="8YL-49-N03"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Your Locations" id="pgl-du-zko">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aTn-zq-e5w">
+                            <connections>
+                                <segue destination="5Z0-Qf-Skb" kind="presentation" identifier="AddItem" id="NOl-MD-Qrg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPF-WK-R13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-690" y="134"/>
+            <point key="canvasLocation" x="-310" y="133"/>
         </scene>
-        <!--Location View Controller-->
+        <!--New Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LocationViewController" customModule="Swiftly" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W8Z-b9-HSQ">
-                                <rect key="frame" x="16" y="40" width="343" height="410"/>
+                                <rect key="frame" x="16" y="84" width="343" height="410"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Location" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBT-q8-jgr">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -108,6 +115,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="W8Z-b9-HSQ" secondAttribute="trailing" id="zqt-36-b0w"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Location" id="Acr-LI-TX2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="138-p7-bWo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zdq-5g-7fh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="locationTextField" destination="xBT-q8-jgr" id="S9z-gv-Eqq"/>
                         <outlet property="photoImageView" destination="aJ3-1N-2S1" id="juq-Fb-c1S"/>
@@ -121,7 +132,43 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1257" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t20-La-OTt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3PO-Gk-vyz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T2B-e0-g5w">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jjK-Kg-IcS" kind="relationship" relationship="rootViewController" id="P3J-52-KAo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1By-Gi-PvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1089" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8H9-HQ-aCD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Z0-Qf-Skb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5PA-bm-STQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YUJ-O8-36o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2s1-xc-tkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475.19999999999999" y="133.13343328335833"/>
         </scene>
     </scenes>
     <resources>
