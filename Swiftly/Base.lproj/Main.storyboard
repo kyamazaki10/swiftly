@@ -117,15 +117,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Location" id="Acr-LI-TX2">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="138-p7-bWo"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zdq-5g-7fh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zdq-5g-7fh">
+                            <connections>
+                                <segue destination="QXi-wA-qVo" kind="unwind" unwindAction="unwindToLocationListWithSender:" id="Xva-mi-oUg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="locationTextField" destination="xBT-q8-jgr" id="S9z-gv-Eqq"/>
                         <outlet property="photoImageView" destination="aJ3-1N-2S1" id="juq-Fb-c1S"/>
                         <outlet property="ratingControl" destination="dvx-wt-omB" id="4iH-9y-CLw"/>
+                        <outlet property="saveButton" destination="Zdq-5g-7fh" id="hjm-Et-Fsb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="QXi-wA-qVo" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="C6Y-pW-Oh0">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="QrS-fk-JfD"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -14,6 +15,10 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+
+    // This value is either passed by `LocationTableViewController` in `prepare(for:sender:)` or constructed as part of adding a new location.
+    var location: Location?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +63,26 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
 
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
+    }
+
+    //MARK: Navigation
+
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+
+        let name = locationTextField.text ?? ""
+        let photo = photoImageView.image
+        let rating = ratingControl.rating
+
+        // Set the location to be passed to the LocationTableViewController after the unwind segue.
+        location = Location(name: name, rating: rating, photo: photo)
     }
 
     //MARK: Actions

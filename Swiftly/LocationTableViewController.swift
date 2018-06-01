@@ -98,6 +98,18 @@ class LocationTableViewController: UITableViewController {
     }
     */
 
+    //MARK: Actions
+
+    @IBAction func unwindToLocationList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? LocationViewController, let location = sourceViewController.location {
+            // Add a new location.
+            let newIndexPath = IndexPath(row: locations.count, section: 0)
+
+            locations.append(location)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+
     //MARK: Private Methods
 
     private func loadSampleLocations() {
