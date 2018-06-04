@@ -25,6 +25,9 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
 
         // Handle the text field's user input through delegate callbacks.
         locationTextField.delegate = self
+
+        // Enable the Save button only if the text field has a Location name.
+        updateSaveButtonState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,8 +44,14 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
         return true
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
 
     //MARK: UIImagePickerControllerDelegate
@@ -100,6 +109,14 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+    }
+
+    //MARK: Private Methods
+
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = locationTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 }
 
