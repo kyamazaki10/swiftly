@@ -13,6 +13,7 @@
 		656449C82057605D00A17E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656449C72057605D00A17E4F /* Assets.xcassets */; };
 		656449CB2057605D00A17E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656449C92057605D00A17E4F /* LaunchScreen.storyboard */; };
 		656449D62057605D00A17E4F /* SwiftlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656449D52057605D00A17E4F /* SwiftlyTests.swift */; };
+		6E04E02720E6C80C00721338 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6E04E02620E6C80C00721338 /* README.md */; };
 		6E8567A0209B93E5003D03B8 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85679F209B93E5003D03B8 /* RatingControl.swift */; };
 		6E8567A2209BBB9F003D03B8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8567A1209BBB9F003D03B8 /* Location.swift */; };
 		6E8567A4209CA119003D03B8 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8567A3209CA119003D03B8 /* LocationTableViewCell.swift */; };
@@ -40,6 +41,7 @@
 		656449D12057605D00A17E4F /* SwiftlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		656449D52057605D00A17E4F /* SwiftlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftlyTests.swift; sourceTree = "<group>"; };
 		656449D72057605D00A17E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E04E02620E6C80C00721338 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6E85679F209B93E5003D03B8 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		6E8567A1209BBB9F003D03B8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6E8567A3209CA119003D03B8 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		656449B42057605D00A17E4F = {
 			isa = PBXGroup;
 			children = (
+				6E04E02620E6C80C00721338 /* README.md */,
 				656449BF2057605D00A17E4F /* Swiftly */,
 				656449D42057605D00A17E4F /* SwiftlyTests */,
 				656449BE2057605D00A17E4F /* Products */,
@@ -192,6 +195,7 @@
 			files = (
 				656449CB2057605D00A17E4F /* LaunchScreen.storyboard in Resources */,
 				656449C82057605D00A17E4F /* Assets.xcassets in Resources */,
+				6E04E02720E6C80C00721338 /* README.md in Resources */,
 				656449C62057605D00A17E4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
