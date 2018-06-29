@@ -26,6 +26,14 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
         // Handle the text field's user input through delegate callbacks.
         locationTextField.delegate = self
 
+        // Set up views if editing an existing Location.
+        if let location = location {
+            navigationItem.title = location.name
+            locationTextField.text = location.name
+            photoImageView.image = location.photo
+            ratingControl.rating = location.rating
+        }
+
         // Enable the Save button only if the text field has a Location name.
         updateSaveButtonState()
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 class LocationTableViewController: UITableViewController {
 
@@ -88,25 +89,48 @@ class LocationTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+
+        switch(segue.identifier ?? "") {
+            case "AddItem":
+                os_log("Adding a new location.", log: OSLog.default, type: .debug)
+            case "ShowDetail":
+                guard let locationDetailViewController = segue.destination as? LocationViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+                }
+                guard let selectedLocationCell = sender as? LocationTableViewCell else {
+                    fatalError("Unexpected sender: \(String(describing: sender))")
+                }
+                guard let indexPath = tableView.indexPath(for: selectedLocationCell) else {
+                    fatalError("The selected cell is not being displayed by the table.")
+                }
+
+                let selectedLocation = locations[indexPath.row]
+                locationDetailViewController.location = selectedLocation
+            default:
+                fatalError("Unexpected segue identifier; \(String(describing: segue.identifier))")
+        }
     }
-    */
 
     //MARK: Actions
 
     @IBAction func unwindToLocationList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? LocationViewController, let location = sourceViewController.location {
-            // Add a new location.
-            let newIndexPath = IndexPath(row: locations.count, section: 0)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing location.
+                locations[selectedIndexPath.row] = location
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                // Add a new location.
+                let newIndexPath = IndexPath(row: locations.count, section: 0)
 
-            locations.append(location)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+                locations.append(location)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
 
