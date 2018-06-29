@@ -85,7 +85,17 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
     //MARK: Navigation
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        // Depending on style of presentation (modal or push presentation), this view controller
+        // needs to be dismissed in two different ways.
+        let isPresentingInAddLocationMode = presentingViewController is UINavigationController
+
+        if isPresentingInAddLocationMode {
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController {
+            owningNavigationController.popViewController(animated: true)
+        } else {
+            fatalError("The LocationViewController is not inside a navigation controller.")
+        }
     }
 
     // This method lets you configure a view controller before it's presented.
