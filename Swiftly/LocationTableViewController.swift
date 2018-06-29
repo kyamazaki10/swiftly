@@ -20,8 +20,13 @@ class LocationTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
 
-        // Load the sample data.
-        loadSampleLocations()
+        // Load any saved locations, otherwise load sample data.
+        if let savedLocations = loadLocations() {
+            locations += savedLocations
+        } else {
+            // Load the sample data.
+            loadSampleLocations()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +73,8 @@ class LocationTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source.
             locations.remove(at: indexPath.row)
+            saveLocations()
+
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -131,6 +138,9 @@ class LocationTableViewController: UITableViewController {
                 locations.append(location)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+
+            // Save the locations.
+            saveLocations()
         }
     }
 
@@ -154,5 +164,19 @@ class LocationTableViewController: UITableViewController {
         }
 
         locations += [location1, location2, location3]
+    }
+
+    private func saveLocations() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(locations, toFile: Location.ArchiveURL.path)
+
+        if isSuccessfulSave {
+            os_log("Locations successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save locations...", log: OSLog.default, type: .error)
+        }
+    }
+
+    private func loadLocations() -> [Location]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Location.ArchiveURL.path) as? [Location]
     }
 }
