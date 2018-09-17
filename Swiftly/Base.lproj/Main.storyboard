@@ -108,6 +108,15 @@
                                     <constraint firstAttribute="trailing" secondItem="xBT-q8-jgr" secondAttribute="trailing" id="eBf-e9-jBd"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-h7-5y2">
+                                <rect key="frame" x="143" y="536" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View on Map"/>
+                                <connections>
+                                    <action selector="openMapView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CkN-ow-OCB"/>
+                                    <segue destination="lgV-k1-Qhf" kind="show" id="h6P-ZX-ZCN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -133,6 +142,7 @@
                         <outlet property="photoImageView" destination="aJ3-1N-2S1" id="juq-Fb-c1S"/>
                         <outlet property="ratingControl" destination="dvx-wt-omB" id="4iH-9y-CLw"/>
                         <outlet property="saveButton" destination="Zdq-5g-7fh" id="hjm-Et-Fsb"/>
+                        <outlet property="viewMap" destination="Rft-h7-5y2" id="6Vu-dJ-39E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,6 +154,24 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1257" y="134"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="O48-WV-F0L">
+            <objects>
+                <viewController id="lgV-k1-Qhf" customClass="MapViewController" customModule="Swiftly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hsh-Jf-8cL"/>
+                        <viewControllerLayoutGuide type="bottom" id="NLv-35-Fgg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SYC-sa-joy" customClass="MQMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZU-ZZ-vFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t20-La-OTt">

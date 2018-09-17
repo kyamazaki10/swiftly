@@ -16,6 +16,7 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var viewMap: UIButton!
 
     // This value is either passed by `LocationTableViewController` in `prepare(for:sender:)` or constructed as part of adding a new location.
     var location: Location?
@@ -131,6 +132,10 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+    }
+
+    @IBAction func openMapView(_ sender: UIButton) {
+        
     }
 
     //MARK: Private Methods

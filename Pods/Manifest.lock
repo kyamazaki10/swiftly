@@ -1,0 +1,18 @@
+PODS:
+  - Mapbox-iOS-SDK (4.1.0)
+  - MapQuestMaps (4.0.0):
+    - Mapbox-iOS-SDK (= 4.1.0)
+    - MQCore (= 1.0.0-beta.7)
+  - MQCore (1.0.0-beta.7)
+
+DEPENDENCIES:
+  - MapQuestMaps (= 4.0.0)
+
+SPEC CHECKSUMS:
+  Mapbox-iOS-SDK: f0a9813d5f08c096c1199eceb57ec6102b19cf54
+  MapQuestMaps: 2ce25e394babe3f5c7b9d16743b40d260449f110
+  MQCore: fd92a5b2afadd5646256674cab9d31925bed2eb5
+
+PODFILE CHECKSUM: 40bdc7d9331777ad659adf21170652c958a1300e
+
+COCOAPODS: 1.4.0
