@@ -16,7 +16,9 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        mapView?.mapType = .normal
+        let mapView = MQMapView(frame: view.bounds)
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 39.7384, longitude: -104.9848), zoomLevel: 9, animated: false)
+        view.addSubview(mapView)
     }
 
     override func didReceiveMemoryWarning() {
