@@ -10,14 +10,19 @@ import Mapbox
 import MapQuestMaps
 
 class MapViewController: UIViewController {
+
+    //MARK: Properties
+
     @IBOutlet var mapView: MQMapView!
+
+    var mapCenter = CLLocationCoordinate2D()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let mapView = MQMapView(frame: view.bounds)
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 39.7384, longitude: -104.9848), zoomLevel: 9, animated: false)
+        mapView.setCenter(mapCenter, zoomLevel: 9, animated: false)
         view.addSubview(mapView)
     }
 

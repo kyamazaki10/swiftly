@@ -5,6 +5,7 @@
 //  Created by Kumiko Yamazaki on 3/12/18.
 //
 
+import MapKit
 import UIKit
 import os.log
 
@@ -102,6 +103,14 @@ class LocationViewController: UIViewController, UITextFieldDelegate, UIImagePick
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+
+        // Pass the location to the MapViewController if the "View on Map" button is pressed.
+        if (segue.identifier == "ShowMap") {
+            let mapViewController = segue.destination as? MapViewController
+
+            // TODO: Geocode each location.
+            mapViewController?.mapCenter = CLLocationCoordinate2D(latitude: 39.7384, longitude: -104.9848)
+        }
 
         // Configure the destination view controller only when the save button is pressed.
         guard let button = sender as? UIBarButtonItem, button === saveButton else {
